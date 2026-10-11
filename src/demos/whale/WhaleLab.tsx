@@ -1,5 +1,5 @@
 /**
- * WhaleLab — ザトウクジラだけを作り込むための制作スペース。
+ * WhaleLab — クジラの調整スペース。ザトウクジラだけを表示して作り込む（開発用）。
  * 背景は本編と同じく「水中から見上げた光」を簡素にしたもの。泡やノイズは入れない。
  */
 import { useEffect, useRef, useState } from "react";
@@ -279,7 +279,7 @@ export default function WhaleLab() {
     <div ref={wrapRef} style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden", background: "#050505" }}>
       <canvas ref={canvasRef} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }} />
       <canvas ref={overlayRef} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block", pointerEvents: "none" }} />
-      <Panel title="WHALE LAB" groups={GROUPS} values={values} onChange={set}>
+      <Panel title="クジラの調整スペース" groups={GROUPS} values={values} onChange={set}>
         {{
           top: (
             <>

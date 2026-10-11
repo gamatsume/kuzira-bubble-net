@@ -1,10 +1,8 @@
 # kuzira-bubble-net
 
-ザトウクジラのバブルネットの内側から、光の差す水面を見上げる WebGL 作品。
-デザイナー向けセッション「AI でつくれるようになったもの」のデモとして制作。
+バブルネットの内側から、光の差す水面を見上げる
 
 - 水中から見上げた光の円、放射状の光の筋、波の重なりで揺らぐ水面
-- 点と線のポリゴンで描いたザトウクジラ 3 頭（骨格と泳ぎは実際の動きを参考）
 - カメラの下を旋回するクジラが吐く泡（大きさで浮上速度が変わる）
 - フィルムの粒子、光のにじみ、雲の影による光の移ろい
 - ドラッグで太陽を動かし、カーソルの軌跡から泡が生まれる
@@ -18,8 +16,7 @@ npm install
 npm run dev
 ```
 
-- 本編: http://localhost:5173/demos.html
-- クジラの制作スペース: http://localhost:5173/whale.html
+http://localhost:5173/demos.html
 
 ## 操作
 
@@ -33,11 +30,17 @@ npm run dev
 
 調整パネルの「設定をコピー」で書き出した値は、`<WhaleRipple settings={...} />` に渡すと初期値になる。
 
+## 開発用
+
+- クジラの調整スペース: http://localhost:5173/whale.html
+  クジラ 1 頭だけを表示して、体の形・泳ぎ方・線や点の見え方を調整する。
+  決めた値は `src/demos/whale/whaleDefaults.ts` に書き写すと、本編の初期値になる。
+
 ## 構成
 
 ```
-demos.html, whale.html     エントリ
+demos.html, whale.html     エントリ（本編 / クジラの調整スペース）
 src/demos/WhaleRipple.tsx  本編（光・水面・泡・合成・調整パネル）
-src/demos/whale/           クジラ（骨格・メッシュ・描画）と泡
+src/demos/whale/           クジラ（骨格・メッシュ・描画）と泡、クジラの調整スペース（WhaleLab.tsx）
 src/demos/ui/              調整パネルの部品
 ```
